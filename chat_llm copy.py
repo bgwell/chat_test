@@ -2,18 +2,18 @@
 # pip install langchain_upstage
 # pip install langchain-pinecone
 
-# from langchain_community.document_loaders import Docx2txtLoader
-# from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_community.document_loaders import Docx2txtLoader
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
-# from langchain_upstage import UpstageEmbeddings
-# from langchain_chroma import Chroma
+from langchain_upstage import UpstageEmbeddings
+from langchain_chroma import Chroma
 from langchain_pinecone import PineconeVectorStore
 from langchain_openai import ChatOpenAI
-# from langchain_upstage import ChatUpstage
+from langchain_upstage import ChatUpstage
 from langchain_core.prompts import ChatPromptTemplate, FewShotChatMessagePromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-# from langchain.chains import RetrievalQA
-# from langchain import hub
+from langchain.chains import RetrievalQA
+from langchain import hub
 from langchain.chains import create_history_aware_retriever
 from langchain_core.prompts import MessagesPlaceholder
 from langchain.chains import create_retrieval_chain
@@ -57,14 +57,14 @@ def get_retriever():
   return retriever
 
 
-def get_llm(model='gpt-4o-mini'):
-    llm = ChatOpenAI(model=model)
-    return llm
+# def get_llm(model='gpt-4o-mini'):
+#     llm = ChatOpenAI(model=model)
+#     return llm
 
 
-# def get_llm(model='solar-mini'):
-#   llm = ChatUpstage(model=model)
-#   return llm
+def get_llm(model='solar-mini'):
+  llm = ChatUpstage(model=model)
+  return llm
 
 
 def get_dictionary_chain():
