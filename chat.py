@@ -10,8 +10,8 @@ load_dotenv()
 
 st.set_page_config(page_title="비지웰 챗봇", page_icon="🐱‍👤")
 
-st.title("🐱‍👤 비지웰 챗봇")
-st.caption("비지웰 취업규칙 문의")
+st.title("👨‍🎓 비지웰 챗봇")
+st.caption("비지웰 취업규칙 안내")
 
 if 'message_list' not in st.session_state:
   st.session_state.message_list = []
@@ -20,7 +20,7 @@ for message in st.session_state.message_list:
   with st.chat_message(message["role"]):
     st.write(message["content"])
 
-if user_question := st.chat_input(placeholder="비지웰 취업규칙에 관련된 궁금한 내용들을 말씀해 주세요") :
+if user_question := st.chat_input(placeholder="비지웰 취업규칙에 관련된 궁금한 내용들을 말씀해 주세요.") :
   with st.chat_message("user") :
     st.write(user_question)
   st.session_state.message_list.append({"role": "user", "content": user_question})
